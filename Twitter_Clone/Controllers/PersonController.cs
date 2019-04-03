@@ -9,12 +9,12 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Twitter_Clone.Data;
 using Twitter_Clone.Models;
-
+//adding changes for GIT assignment
 namespace Twitter_Clone.Controllers
 {
     public class PersonController : Controller
     {
-        private Twitter_CloneDBContext db = new Twitter_CloneDBContext();
+        private Twitter_CloneDBContext db = new Twitter_CloneDBContext(); 
 
         [Authorize]
         // GET: Person
