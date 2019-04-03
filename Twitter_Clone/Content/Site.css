@@ -1,0 +1,65 @@
+﻿body 
+{
+    margin:0;   
+    padding-bottom: 20px;
+}
+header
+{
+    background-color:burlywood;
+    height:10vh;
+
+}
+.Logo
+{
+    color:chocolate;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:5.5vmin;
+}
+
+nav.horizontal > ul > li {
+    display: inline-block;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-right:2vw;
+
+}
+
+    nav.horizontal > ul > li a {
+        color: #ff6f00;
+        font-size: 3.5vmin;
+        font-stretch: narrower;
+    }
+
+        nav.horizontal > ul > li a:hover {
+            color: rgba(121, 85, 72, 0.3);           
+        }
+.nav-Welcome {
+        font-size: 1vmin;
+        color: gray;
+    }
+
+.body-content {
+    margin-top: 10px;
+   border:5px solid green;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.message{
+    width:1000vw;
+}
+.padtop
+{
+    margin-top:100vh;
+}

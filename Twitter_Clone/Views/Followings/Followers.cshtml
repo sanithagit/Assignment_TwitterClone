@@ -1,0 +1,37 @@
+﻿@model Twitter_Clone.Models.UserFollowing
+
+@{
+    ViewBag.Title = "Followers";
+}
+
+<h2>Following</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("User Name")
+        </th>
+        <th>
+            @Html.Label("Full Name")
+        </th>
+        <th></th>
+    </tr>
+    @{ if (Model != null)
+        {
+            foreach (var item in Model.FollowingLst)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
+        }
+    }
+
+</table>

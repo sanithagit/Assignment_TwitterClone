@@ -1,0 +1,70 @@
+﻿@model Twitter_Clone.Models.UserFollowing
+
+@{
+    ViewBag.Title = "Follow Users";
+}
+
+<h2>Follow Users</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h6>Provide UserName for exact serach results or simply click on Search button to see all Users </h6>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+
+        <div class="col-md-10">
+            @using (Html.BeginForm())
+            {
+                @Html.TextBox("txtName")
+                <input type="submit" value="Search" class="btn btn-secondary" />
+            }
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.user.User_Id)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.user.FullName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null && Model.FollowingLst != null)
+            {
+                foreach (var item in Model.FollowingLst)
+                {
+                    <tr>
+                        <th scope="row">
+                            @Html.DisplayFor(modelItem => item.User_Id)
+
+                        </th>
+                        <td>  @Html.DisplayFor(modelItem => item.FullName)</td>
+                        <td>
+
+                            @Html.ActionLink("Follow", "Follow", new { id = item.User_Id })
+                        </td>
+                    </tr>
+
+                }
+            }
+
+
+
+        </tbody>
+    </table> 
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>
